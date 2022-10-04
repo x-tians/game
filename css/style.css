@@ -1,0 +1,233 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+}
+/*header*/
+header{
+    width:902px;
+    display: none;
+    grid-template-columns: 200px 1fr 220px;
+    grid-template-rows: 1fr;
+    border:1px solid black;
+    border-radius: 3px;
+    background-color: #9ab21e;
+    height:90%;
+}
+.header-top-right,.header-top-left,.header-top-middle{
+    display: flex;
+    align-items: center;
+    padding:3px;
+}
+.header-top-left{
+    margin:7px;
+}
+.header-top-middle{
+    justify-content: center;
+}
+.header-top-right{
+    margin-left:7px;
+}
+.header-top{
+    padding:2px;
+    margin:3px;
+    width:90px;
+    height:25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:7px;
+    font-weight: 100;
+    font-size:x-small;
+}
+.header-top-left,.restart,.quit{
+    border-radius: 3px 20px 3px 20px;
+    border:1px solid black;
+    background-color:#ffc706;
+}
+/*game score*/
+header h3{
+    color:black;
+    font-weight: 100;
+    font-size: medium;
+    letter-spacing: 3px;
+    margin-left:30px;
+}
+.header-top:hover{
+    cursor: pointer;
+    height:26px;
+    width:91px;
+}
+body{
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*game area*/
+.game-area{
+    width:900px;
+    height:100%;
+    position: relative;
+}
+main{
+    width:100%;
+    height:600px;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+/*canvas*/
+.game-container{
+    border: 1px solid black;
+    position: absolute;
+}
+#canvas-sprite{
+    z-index: 1;
+}
+#canvas-enemy{
+    z-index: 2;
+}
+#canvas-menu-success{
+    z-index: 3;
+}
+/*main menu*/
+#menus{
+    width:902px;
+    height:502px;
+    transition: all 350ms ease-in-out;
+    z-index:4;
+    background: url("../assets/chicken.png") no-repeat;
+    background-size:80%;
+    border:2px solid black;
+    display: grid;
+    grid-template-columns: 250px 200px 1fr;
+    padding:10px;
+    background-color: white;
+    background-origin: content-box,padding-box;
+}
+/*append child from js*/
+.button-menus{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    justify-content: end;
+    align-items: center;
+}
+.button-menus button{
+    width:90%;
+    height:30px;
+    font-size: medium;
+    font-weight:100;
+    border-radius: 3px 17px 3px 17px;
+    margin:2px;
+    background-color: rgb(255 199 6);
+    transition: all 500ms ease;
+}
+.button-menus button:hover{
+    cursor:pointer;
+    width:95%;
+    color:rgb(19, 26, 151);
+}
+/*Title of the game*/
+h1{
+    font-size:50px;
+    font-weight:bolder;
+    letter-spacing: 3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 12px;
+    overflow: auto;
+    color: rgb(19 26 151);
+    text-shadow: 1px 5px 5px #ffc706;
+}
+/*header top right menus*/
+.right-menus{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+/*accordion menus*/
+.accordion{
+    width:100%;
+    height:25px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    transition: all 1.4s;
+    text-align: left;
+    padding:18px;
+    color:black;
+    background-color: #cccccc47;
+}
+.active,.accordion:hover{
+    background-color: #ccc;
+}
+/*accordion panel*/
+.panel{
+    padding: 18px;
+    background-color: #f1f1f1de;
+    display: none;
+    overflow: none;
+    font-size: small;
+    font-weight: 100;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+.accordion:after{
+    content:'\02795';
+    font-size: 9px;
+    color:#777;
+    float: right;
+    margin-left: 5px;
+}
+.active:after{
+    content:'\02796';
+}
+.panel ul{
+    list-style-type: circle;
+}
+.panel-left:before,.panel-right:before,.panel-up:before,.panel-down:before{
+    font-weight: bolder;
+    background-color: #ffc706;
+    border: 1px solid black;
+    display: inline-block;
+    width:30px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom:2px;
+}
+.panel-left:before{
+    content:'\2190';
+}
+.panel-right:before{
+    content:'\2192';
+}
+.panel-up:before{
+    content:'\2191';
+}
+.panel-down:before{
+    content:'\2193';
+}
+@media only screen and (max-width: 992px) {
+    body,main{
+        height:100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    main{
+        transform: scale(0.7);
+    }
+}
+@media only screen and (max-width:576px) {
+    main{
+        transform: scale(0.6);
+    }
+}
+@media only screen and (max-width:520px) {
+    main{
+        transform: scale(0.35);
+    }
+}

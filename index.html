@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='./assets/icoGame.ico'>
+    <title>Project 2 | Egg Collector</title>
+    <script src='./js/script.js' defer></script>
+    <link href='./css/style.css' type='text/css' rel='stylesheet'/>
+</head>
+<body>
+    
+    <main>
+        <header>
+            <!--header left-->
+            <div class='header-top-left'><h3>Score is:<strong id='text-score'></strong><h3></div>
+                <!--header middle-->
+            <div class='header-top-middle'></div>
+            <!--header right-->
+            <div class='header-top-right'>
+                <div class='restart header-top'><strong>Restart</strong></div>
+                <div class='quit header-top'><strong>Quit</strong></div>
+            </div>
+        </header>
+        <!--game section-->
+        <section class='game-area'>
+            <canvas id='canvas-background' class='game-container'></canvas>
+            <canvas id='canvas-sprite' class='game-container'></canvas>
+            <canvas id='canvas-enemy' class='game-container'></canvas>
+            <canvas id='canvas-menu-success' class='game-container'></canvas>
+            <!--game menus-->
+            <section id='menus' class='game-container'>
+                <div class='left-menus'>
+                </div>
+                <div class='button-menus'>
+                </div>
+                <!--game right menus-->
+                <div class='right-menus'>
+                    <h1>EGG COLLECTOR</h1>
+                    <!--accordion menu-->
+                    <div class='accordions'>
+                        <!--Instructions-->
+                        <button class='accordion'>
+                            Instruction
+                        </button>
+                        <panel class='panel'>
+                            <p>The game has three levels: easy, medium, and hard. To win the game, simply collect all the eggs and avoid the collision of the moving enemy.</p><br>
+                            <p><strong class='panel-left'></strong> Press the arrow left on the keyboard to move to the left.</p>
+                            <p><strong class='panel-right'></strong> Press the arrow right on the keyboard to move to the right.</p>
+                            <p><strong class='panel-up'></strong> Press the arrow up on the keyboard to move upward.</p>
+                            <p><strong class='panel-down'></strong> Press the arrow down on the keyboard to move downward.</p>
+                        </panel>
+                        <!--credits-->
+                        <button class='accordion'>
+                            Credits
+                        </button>
+                        <panel class='panel'>
+                            <ul>
+                                <li><p><strong>Sprites: </strong><a href='https://www.pngegg.com'>pngegg.com</a>, <a href='https://www.freepik.com'>freepik.com</a></p></li>
+                                <li><p><strong>Background Sound: </strong><a href='https://www.youtube.com/watch?v=msSc7Mv0QHY'> Youtube | J.Geco Channel- Chicken Song</a></p></li>
+                                <li><p><strong>Other sounds and pictures: </strong><a href='#'> From Internet | I can't remember</a></p></li>
+                            </ul>
+                        </panel>
+                        <!--about-->
+                        <button class='accordion'>
+                            About
+                        </button>
+                        <panel class='panel'>
+                            <p>This game is created for learning purposes only and not for commercial purposes.</p>
+                            <br>
+                            <p><strong>Game Developer:</strong> Cristian U. Langawan.</p>
+                        </panel>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    
+</body>
+</html>
